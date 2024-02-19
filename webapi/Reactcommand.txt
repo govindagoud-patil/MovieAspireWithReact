@@ -1,0 +1,18 @@
+
+# install all depes
+npm install
+
+#run react
+npm run dev
+
+#install axios
+# careate vite project
+npm create vite@latest
+
+npm install axios
+
+#install sematic ui css
+npm install semantic-ui-react@3.0.0-beta.0 semantic-ui-css
+
+# install react router
+npm install react-router-dom

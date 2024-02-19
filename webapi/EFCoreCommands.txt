@@ -1,0 +1,9 @@
+# Installation of Dotnet ef tool
+ dotnet tool install --global dotnet-ef
+
+ dotnet tool update --global dotnet-ef
+
+1. Initialize ef Migration
+Dotnet ef migrations add Init -s .\src\Movies.webapi\ -p .\src\Movies.Infrastructure\ 
+2. apply or update the migration
+Dotnet ef database update -s .\src\Movies.webapi\ -p .\src\Movies.Infrastructure\
