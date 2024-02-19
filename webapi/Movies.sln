@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.webapi", "src\Movies.webapi\Movies.webapi.csproj", "{BA89982A-947A-42FB-A5E4-2BBA6880C9BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesAspireWithReact.AppHost", "..\MoviesAspireWithReact.AppHost\MoviesAspireWithReact.AppHost.csproj", "{3ABF7DDA-D7DD-4F6A-B263-A06B2D7DFB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesAspireWithReact.AppHost", "..\MoviesAspireWithReact.AppHost\MoviesAspireWithReact.AppHost.csproj", "{3ABF7DDA-D7DD-4F6A-B263-A06B2D7DFB03}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesAspireWithReact.ServiceDefaults", "..\MoviesAspireWithReact.ServiceDefaults\MoviesAspireWithReact.ServiceDefaults.csproj", "{1BCBE2E7-E9B4-42B7-895F-3881A29D5FDC}"
 EndProject
