@@ -6,6 +6,8 @@ using Movies.Contracts;
 using Movies.Contracts.Dtos;
 using Movies.Contracts.Requests;
 using Movies.Infrastructure;
+using Serilog;
+using System.Runtime.CompilerServices;
 
 namespace Movies.webapi.Extensions
 {
@@ -61,6 +63,11 @@ namespace Movies.webapi.Extensions
             });
 
         }
+
+        public static void AddAppLogging(this WebApplicationBuilder builder) => builder.Host.UseSerilog((ctx, cnf) =>
+        {
+            cnf.ReadFrom.Configuration(ctx.Configuration);
+        });
 
     }
 }

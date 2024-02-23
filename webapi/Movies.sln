@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesAspireWithReact.AppHo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesAspireWithReact.ServiceDefaults", "..\MoviesAspireWithReact.ServiceDefaults\MoviesAspireWithReact.ServiceDefaults.csproj", "{1BCBE2E7-E9B4-42B7-895F-3881A29D5FDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieBlazor", "..\webapp\Blazor\MovieBlazor\MovieBlazor.csproj", "{F673FEC6-1A46-4FD5-AB03-1A4DBC6588D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{1BCBE2E7-E9B4-42B7-895F-3881A29D5FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BCBE2E7-E9B4-42B7-895F-3881A29D5FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BCBE2E7-E9B4-42B7-895F-3881A29D5FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F673FEC6-1A46-4FD5-AB03-1A4DBC6588D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F673FEC6-1A46-4FD5-AB03-1A4DBC6588D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F673FEC6-1A46-4FD5-AB03-1A4DBC6588D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F673FEC6-1A46-4FD5-AB03-1A4DBC6588D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

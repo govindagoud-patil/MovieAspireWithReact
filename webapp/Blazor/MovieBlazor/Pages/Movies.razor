@@ -1,0 +1,54 @@
+﻿@page "/movies"
+@using System.Text.Json
+@using global::Movies.Contracts.Dtos
+@inject HttpClient Http
+
+<PageTitle>Weather</PageTitle>
+
+<h1>movies</h1>
+
+<p>This component demonstrates fetching movies from the server.</p>
+
+@if (movies.movieDtos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>CreateDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in movies.movieDtos)
+            {
+                <tr>
+                    <td>@movie.Description</td>
+                    <td>@movie.Category</td>
+                    <td>@movie.Title</td>
+                    <td>@movie.CreateDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private MovieDtos? movies;
+
+    public class MovieDtos
+    {
+        public MovieDto[] movieDtos { get; set; }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        movies = await Http.GetFromJsonAsync<MovieDtos>("http://localhost:5124/api/movies");
+    }
+}
+

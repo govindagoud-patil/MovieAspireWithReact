@@ -8,11 +8,11 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Movies.webapi.Extensions;
 using Movies.webapi.Exceptions;
+using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-
-
+builder.AddAppLogging();
 
 builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
@@ -64,6 +64,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler(_ => { });
+app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 app.UseCors("AllowReactApp");
 app.AddMovieEndpoints(false);

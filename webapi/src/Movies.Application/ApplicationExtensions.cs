@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
+using Movies.Application.Behaviors;
 using Movies.Application.Mappings;
-using Movies.Application.Validator;
 
 namespace Movies.Application
 {
@@ -28,6 +28,7 @@ namespace Movies.Application
 
                 // register validation behavior
                 cf.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                cf.AddOpenBehavior(typeof(RequestLoggingPipelineBehavior<,>));
 
 
             });

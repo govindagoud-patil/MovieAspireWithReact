@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Movies.Application.Validator
+namespace Movies.Application.Behaviors
 {
 
     /// <summary>
@@ -37,17 +37,17 @@ namespace Movies.Application.Validator
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             var validationContext = new ValidationContext<TRequest>(request);
-            var validationResult = await Task.WhenAll(_validators.Select(x=> x.ValidateAsync(validationContext,cancellationToken)));
+            var validationResult = await Task.WhenAll(_validators.Select(x => x.ValidateAsync(validationContext, cancellationToken)));
 
             var validationFailure = validationResult.Where(x => !x.IsValid)
                                                     .SelectMany(x => x.Errors)
-                                                    .Select(x=> new ValidationError() { Property=x.PropertyName,ErrorMessage=x.ErrorMessage }).ToList();
-            if(validationFailure.Any())
+                                                    .Select(x => new ValidationError() { Property = x.PropertyName, ErrorMessage = x.ErrorMessage }).ToList();
+            if (validationFailure.Any())
             {
                 throw new CustomValidationException(validationFailure);
             }
 
-          return await next.Invoke();
+            return await next.Invoke();
         }
     }
 }
